@@ -39,6 +39,7 @@ shape = SubResource("CapsuleShape3D_gd3rc")
 disabled = true
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
 one_shot = true
 autostart = true
 

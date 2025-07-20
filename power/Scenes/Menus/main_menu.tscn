@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://rn532j2fevhd"]
+[gd_scene load_steps=4 format=3 uid="uid://rn532j2fevhd"]
 
 [ext_resource type="Script" uid="uid://j4cdhjbg5tuw" path="res://Scenes/Menus/main_menu.gd" id="1_38aua"]
+[ext_resource type="AudioStream" uid="uid://nq1q8nak4ydd" path="res://Assets/Sounds/music/Sketchbook 2024-10-26.ogg" id="2_penys"]
+[ext_resource type="AudioStream" uid="uid://dggw51btwngau" path="res://Assets/Sounds/tone1.ogg" id="3_penys"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -74,6 +76,15 @@ layout_mode = 2
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 30
 text = "Exit Game"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_penys")
+autoplay = true
+parameters/looping = true
+
+[node name="ButtonPress" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("3_penys")
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -56,6 +56,7 @@ func gameOver():
 	$AnimationTree.set("parameters/Die/blend_amount", 1)
 	dead = true
 	velocity = Vector3.ZERO
+	$"../..".gameOver()
 
 func fire() -> void:
 	if powerPointMax >= 1:

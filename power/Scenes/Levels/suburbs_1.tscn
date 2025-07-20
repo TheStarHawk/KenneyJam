@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ccjuwjkgaifsh"]
+[gd_scene load_steps=25 format=3 uid="uid://ccjuwjkgaifsh"]
 
 [ext_resource type="Script" uid="uid://cs1isehx17ibx" path="res://Scenes/Levels/GameWorld.gd" id="1_eemc0"]
 [ext_resource type="MeshLibrary" uid="uid://dhnm7324b3v1v" path="res://Assets/GridmapMeshes/Suburbs.tres" id="1_v7gnl"]
@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dtptrumiafx5a" path="res://Scenes/Player/power_bot.tscn" id="3_fg2ge"]
 [ext_resource type="MeshLibrary" uid="uid://ct8q5s7bm5qkp" path="res://Assets/GridmapMeshes/Walls.tres" id="3_oa8tq"]
 [ext_resource type="MeshLibrary" uid="uid://b6mkro1td5rlt" path="res://Assets/GridmapMeshes/CityBuildings.tres" id="3_rtd8l"]
-[ext_resource type="PackedScene" uid="uid://bj027ngersavx" path="res://Assets/Prototype/door.tscn" id="4_pg0l4"]
+[ext_resource type="PackedScene" uid="uid://bj027ngersavx" path="res://Scenes/Levels/door.tscn" id="4_pg0l4"]
 [ext_resource type="PackedScene" uid="uid://b48q5w7jqlrs6" path="res://Scenes/Pickups/power_up.tscn" id="4_uwdd6"]
 [ext_resource type="Script" uid="uid://btd4kystikbya" path="res://Scenes/Levels/vaccine.gd" id="8_tg2gj"]
 [ext_resource type="Texture2D" uid="uid://ddwlpjhy4go3v" path="res://Assets/Sprites/drawing_picker.svg" id="9_eemc0"]
@@ -16,6 +16,8 @@
 [ext_resource type="ArrayMesh" uid="uid://rnh0w42xn7re" path="res://Scenes/Player/heal.mesh" id="14_dpi2j"]
 [ext_resource type="ArrayMesh" uid="uid://cngq06sk0ah7l" path="res://Assets/Prototype/flag.obj" id="15_mpsh7"]
 [ext_resource type="PackedScene" uid="uid://bdc64epxjmlcx" path="res://Scenes/Enemies/enemy.tscn" id="16_dpi2j"]
+[ext_resource type="AudioStream" uid="uid://dkkymmexwlkyy" path="res://Assets/Sounds/music/Sketchbook 2024-11-13.ogg" id="17_fpk1s"]
+[ext_resource type="AudioStream" uid="uid://dggw51btwngau" path="res://Assets/Sounds/tone1.ogg" id="18_fpk1s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uwdd6"]
 sky_top_color = Color(0.118518, 0.0720775, 0.400891, 1)
@@ -564,6 +566,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Panel" type="Panel" parent="PauseMenu"]
+modulate = Color(0.06, 0.53, 1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 1
@@ -616,11 +631,201 @@ theme_override_font_sizes/font_size = 100
 text = "Paused"
 horizontal_alignment = 1
 
+[node name="GameWin!" type="Control" parent="."]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="GameWin!"]
+modulate = Color(0.9, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameWin!"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -504.0
+offset_right = 200.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Restart" type="Button" parent="GameWin!/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "Continue"
+
+[node name="Container" type="Container" parent="GameWin!/VBoxContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="GameWin!/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "Back to Menu"
+
+[node name="Label" type="Label" parent="GameWin!"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -741.0
+offset_top = -390.0
+offset_right = 741.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/font_size = 100
+text = "MISSION 
+COMPLETE"
+horizontal_alignment = 1
+
+[node name="Stats" type="VBoxContainer" parent="GameWin!"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.0
+offset_top = -113.0
+offset_right = 173.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PowerGems" type="Label" parent="GameWin!/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "PowerGems : 0/10"
+
+[node name="Zombies" type="Label" parent="GameWin!/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Zombies : 0/?"
+
+[node name="GameOver" type="Control" parent="."]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="GameOver"]
+modulate = Color(0.74954, 0, 0.129847, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOver"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -504.0
+offset_right = 200.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Restart" type="Button" parent="GameOver/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "Restart"
+
+[node name="Container" type="Container" parent="GameOver/VBoxContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="GameOver/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "Back to Menu"
+
+[node name="Label" type="Label" parent="GameOver"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -741.0
+offset_top = -172.5
+offset_right = 741.0
+offset_bottom = 172.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/font_size = 100
+text = "Game over"
+horizontal_alignment = 1
+
+[node name="BackgroundNoise" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("17_fpk1s")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
+
+[node name="ButtonPress" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_fpk1s")
+
 [connection signal="body_entered" from="Pickups/Vaccine" to="." method="_on_vaccine_body_entered"]
 [connection signal="body_entered" from="Pickups/Vaccine" to="Pickups/Vaccine" method="_on_body_entered"]
 [connection signal="finished" from="Pickups/Vaccine/AudioStreamPlayer3D" to="Pickups/Vaccine" method="_on_audio_stream_player_3d_finished"]
-[connection signal="body_entered" from="Pickups/EXIT" to="." method="_on_vaccine_body_entered"]
-[connection signal="body_entered" from="Pickups/EXIT" to="Pickups/EXIT" method="_on_body_entered"]
+[connection signal="body_entered" from="Pickups/EXIT" to="." method="_on_exit_body_entered"]
 [connection signal="finished" from="Pickups/EXIT/AudioStreamPlayer3D" to="Pickups/EXIT" method="_on_audio_stream_player_3d_finished"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="GameWin!/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="GameWin!/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="GameOver/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="GameOver/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

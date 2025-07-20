@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://h3i6m5u1qw80"]
+[gd_scene load_steps=3 format=3 uid="uid://h3i6m5u1qw80"]
 
 [ext_resource type="Script" uid="uid://bhrefo2tge5yx" path="res://Scenes/Menus/cutscene.gd" id="1_2rivn"]
+[ext_resource type="AudioStream" uid="uid://cee8swng4e74e" path="res://Assets/Sounds/music/Sketchbook 2024-12-15.ogg" id="2_ccmfx"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -105,5 +106,10 @@ grow_vertical = 0
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 30
 text = "SKip"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ccmfx")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="Skip" to="Cutscene?" method="_on_skip_pressed"]
