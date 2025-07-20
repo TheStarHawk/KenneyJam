@@ -1,0 +1,36 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://bc2nh0mfqe0c3"]
+
+[ext_resource type="Texture2D" uid="uid://c0den6rwbvdid" path="res://Assets/ForTheme/Vector/Blue/bar_round_gloss_large.svg" id="1_xixka"]
+[ext_resource type="StyleBox" uid="uid://dg6j2vsp82dpj" path="res://Assets/ForTheme/Resources/ButtonBlue.tres" id="2_w6xbq"]
+[ext_resource type="FontFile" uid="uid://r8mdnykfhrpe" path="res://Assets/ForTheme/Font/Kenney Future.ttf" id="3_6ic6p"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cru8j"]
+texture = ExtResource("1_xixka")
+modulate_color = Color(1, 1, 1, 0.490196)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dt5w5"]
+texture = ExtResource("1_xixka")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sl22n"]
+texture = ExtResource("1_xixka")
+modulate_color = Color(0.84, 0.84, 0.84, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s84eq"]
+texture = ExtResource("1_xixka")
+modulate_color = Color(0.44, 0.44, 0.44, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wfy4h"]
+texture = ExtResource("1_xixka")
+modulate_color = Color(0.44, 0.44, 0.44, 1)
+
+[resource]
+default_font = ExtResource("3_6ic6p")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/styles/disabled = SubResource("StyleBoxTexture_cru8j")
+Button/styles/focus = SubResource("StyleBoxTexture_dt5w5")
+Button/styles/hover = SubResource("StyleBoxTexture_sl22n")
+Button/styles/hover_pressed = SubResource("StyleBoxTexture_s84eq")
+Button/styles/normal = ExtResource("2_w6xbq")
+Button/styles/pressed = SubResource("StyleBoxTexture_wfy4h")
+CheckBox/constants/h_separation = 10
+Label/constants/outline_size = 3

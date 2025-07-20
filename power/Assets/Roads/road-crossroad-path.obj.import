@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bups1lp7818su"
+path="res://.godot/imported/road-crossroad-path.obj-54b134d8595f8dcf4e1141afb21c4bee.mesh"
+
+[deps]
+
+files=["res://.godot/imported/road-crossroad-path.obj-54b134d8595f8dcf4e1141afb21c4bee.mesh"]
+
+source_file="res://Assets/Roads/road-crossroad-path.obj"
+dest_files=["res://.godot/imported/road-crossroad-path.obj-54b134d8595f8dcf4e1141afb21c4bee.mesh", "res://.godot/imported/road-crossroad-path.obj-54b134d8595f8dcf4e1141afb21c4bee.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

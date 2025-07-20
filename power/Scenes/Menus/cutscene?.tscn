@@ -1,0 +1,109 @@
+[gd_scene load_steps=2 format=3 uid="uid://h3i6m5u1qw80"]
+
+[ext_resource type="Script" uid="uid://bhrefo2tge5yx" path="res://Scenes/Menus/cutscene.gd" id="1_2rivn"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cutscene?" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2rivn")
+
+[node name="BackGround" type="Panel" parent="Cutscene?"]
+modulate = Color(0.06, 0.53, 1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackGround2" type="Panel" parent="Cutscene?"]
+modulate = Color(0.06, 0.53, 1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackGround3" type="Panel" parent="Cutscene?"]
+modulate = Color(0.06, 0.53, 1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Cutscene?"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -875.0
+offset_top = -310.5
+offset_right = 875.0
+offset_bottom = 310.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "You are on an important mission to 
+eliminate the Zombie outbreak before it spreads any further,
+
+you have been airdropped into the city,
+but something went wrong. you're now in the
+suburbs within the quarantine zone and all your
+power gems have been scattered around the city.
+
+your new objective is to regain your power gems,
+use them to gain access to the rest of the city,
+find the prototype Vaccine outside the hospital,
+destroy as many zombies as possible,
+and get back to the extraction point."
+horizontal_alignment = 1
+
+[node name="Skip" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -296.0
+offset_top = -112.0
+offset_right = -95.0
+offset_bottom = -60.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 30
+text = "SKip"
+
+[connection signal="pressed" from="Skip" to="Cutscene?" method="_on_skip_pressed"]

@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyloo0bbpj5oh"]
+
+[ext_resource type="Script" uid="uid://dnp2jaggw6nuq" path="res://Scenes/Player/pew.gd" id="1_brkjr"]
+[ext_resource type="ArrayMesh" uid="uid://b5bcjw2io0et2" path="res://Scenes/Player/pew.mesh" id="2_gd3rc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gd3rc"]
+radius = 0.2
+height = 0.4
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c3gfm"]
+emission_shape = 1
+emission_sphere_radius = 0.4
+gravity = Vector3(0, -0.25, 0)
+scale_min = 0.1
+scale_max = 0.25
+
+[node name="Pew" type="CharacterBody3D"]
+script = ExtResource("1_brkjr")
+
+[node name="Ball" type="Area3D" parent="."]
+
+[node name="Marble-low" type="MeshInstance3D" parent="Ball"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("2_gd3rc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ball"]
+transform = Transform3D(1.1, 0, 0, 0, -4.80825e-08, -1.1, 0, 1.1, -4.80825e-08, -0.000253081, 0.0042693, 0.00287926)
+shape = SubResource("CapsuleShape3D_gd3rc")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Ball"]
+amount = 4
+lifetime = 0.4
+process_material = SubResource("ParticleProcessMaterial_c3gfm")
+draw_pass_1 = ExtResource("2_gd3rc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_gd3rc")
+disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="Ball" to="." method="_on_ball_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

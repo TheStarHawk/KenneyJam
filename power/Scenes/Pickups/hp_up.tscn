@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://xvtjjgo7cc3a"]
+
+[ext_resource type="Script" uid="uid://wg8bd81wy1ew" path="res://Scenes/Pickups/hp_up.gd" id="1_u2lc4"]
+[ext_resource type="Texture2D" uid="uid://dkox5ueir3otg" path="res://Assets/Sprites/gem_red.svg" id="2_u2lc4"]
+[ext_resource type="AudioStream" uid="uid://bg5elyqg8x85r" path="res://Assets/Sounds/powerUp7.ogg" id="3_fnx51"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_y8eq8"]
+
+[node name="HPUp" type="Area3D"]
+script = ExtResource("1_u2lc4")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_u2lc4")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Sprite3D"]
+light_color = Color(1, 0.211765, 0.368627, 1)
+light_energy = 10.0
+omni_range = 2.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_y8eq8")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_fnx51")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]

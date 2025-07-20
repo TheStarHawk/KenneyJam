@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpm73785nrwpy"]
+
+[ext_resource type="Texture2D" uid="uid://dkox5ueir3otg" path="res://Assets/Sprites/gem_red.svg" id="1_7gtwt"]
+
+[node name="PowerPoint" type="TextureRect"]
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("1_7gtwt")

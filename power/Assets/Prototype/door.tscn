@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://bj027ngersavx"]
+
+[ext_resource type="Script" uid="uid://d1f3fxoo3xcid" path="res://door.gd" id="1_u1f0s"]
+[ext_resource type="ArrayMesh" uid="uid://8qowc7248s86" path="res://Assets/Prototype/door-garage.obj" id="2_k5qq4"]
+[ext_resource type="ArrayMesh" uid="uid://cfc0dayqcuh0i" path="res://Assets/Prototype/number-7.obj" id="3_u1f0s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qkw3b"]
+size = Vector3(0.12, 0.801, 1.105)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2jmeg"]
+size = Vector3(0.126465, 0.100857, 0.252274)
+
+[node name="Door" type="StaticBody3D"]
+script = ExtResource("1_u1f0s")
+
+[node name="Door-garage" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_k5qq4")
+
+[node name="Number" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.0666351, 0.471963, 0)
+mesh = ExtResource("3_u1f0s")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000244141, 0.402008, 0.00131226)
+shape = SubResource("BoxShape3D_qkw3b")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.111816, 0.150461, 0.00200653)
+shape = SubResource("BoxShape3D_2jmeg")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11276, 0.150461, 0.00131226)
+shape = SubResource("BoxShape3D_2jmeg")
+
+[node name="Collision" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000244141, 0.402008, 0.00131226)
+shape = SubResource("BoxShape3D_qkw3b")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.14418, 0.738644, -2.68377e-09)
+light_color = Color(1, 1, 0.596078, 1)
+light_bake_mode = 0
+spot_range = 15.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Collision" to="." method="_on_collision_area_entered"]

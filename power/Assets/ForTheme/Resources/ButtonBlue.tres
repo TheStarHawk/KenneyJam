@@ -1,0 +1,6 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dg6j2vsp82dpj"]
+
+[ext_resource type="Texture2D" uid="uid://c0den6rwbvdid" path="res://Assets/ForTheme/Vector/Blue/bar_round_gloss_large.svg" id="1_vxfr7"]
+
+[resource]
+texture = ExtResource("1_vxfr7")
