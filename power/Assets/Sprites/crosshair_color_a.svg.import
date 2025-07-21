@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bs4hjtbnev4kj"
 path.s3tc="res://.godot/imported/crosshair_color_a.svg-e72535ac69c213152e0fa33646e1091c.s3tc.ctex"
+path.etc2="res://.godot/imported/crosshair_color_a.svg-e72535ac69c213152e0fa33646e1091c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Sprites/crosshair_color_a.svg"
-dest_files=["res://.godot/imported/crosshair_color_a.svg-e72535ac69c213152e0fa33646e1091c.s3tc.ctex"]
+dest_files=["res://.godot/imported/crosshair_color_a.svg-e72535ac69c213152e0fa33646e1091c.s3tc.ctex", "res://.godot/imported/crosshair_color_a.svg-e72535ac69c213152e0fa33646e1091c.etc2.ctex"]
 
 [params]
 

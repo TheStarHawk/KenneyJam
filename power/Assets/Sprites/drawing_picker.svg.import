@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddwlpjhy4go3v"
 path.s3tc="res://.godot/imported/drawing_picker.svg-fb2fe67394beab8c2ab54111157daa36.s3tc.ctex"
+path.etc2="res://.godot/imported/drawing_picker.svg-fb2fe67394beab8c2ab54111157daa36.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Sprites/drawing_picker.svg"
-dest_files=["res://.godot/imported/drawing_picker.svg-fb2fe67394beab8c2ab54111157daa36.s3tc.ctex"]
+dest_files=["res://.godot/imported/drawing_picker.svg-fb2fe67394beab8c2ab54111157daa36.s3tc.ctex", "res://.godot/imported/drawing_picker.svg-fb2fe67394beab8c2ab54111157daa36.etc2.ctex"]
 
 [params]
 

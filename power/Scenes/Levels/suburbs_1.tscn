@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ccjuwjkgaifsh"]
+[gd_scene load_steps=26 format=3 uid="uid://ccjuwjkgaifsh"]
 
 [ext_resource type="Script" uid="uid://cs1isehx17ibx" path="res://Scenes/Levels/GameWorld.gd" id="1_eemc0"]
 [ext_resource type="MeshLibrary" uid="uid://dhnm7324b3v1v" path="res://Assets/GridmapMeshes/Suburbs.tres" id="1_v7gnl"]
@@ -17,6 +17,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cngq06sk0ah7l" path="res://Assets/Prototype/flag.obj" id="15_mpsh7"]
 [ext_resource type="PackedScene" uid="uid://bdc64epxjmlcx" path="res://Scenes/Enemies/enemy.tscn" id="16_dpi2j"]
 [ext_resource type="AudioStream" uid="uid://dkkymmexwlkyy" path="res://Assets/Sounds/music/Sketchbook 2024-11-13.ogg" id="17_fpk1s"]
+[ext_resource type="Texture2D" uid="uid://b8xp3whsrji6l" path="res://Assets/ForTheme/Vector/Blue/bar_square_gloss_large.svg" id="17_iywhs"]
 [ext_resource type="AudioStream" uid="uid://dggw51btwngau" path="res://Assets/Sounds/tone1.ogg" id="18_fpk1s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uwdd6"]
@@ -30,10 +31,12 @@ sky_material = SubResource("ProceduralSkyMaterial_uwdd6")
 
 [sub_resource type="Environment" id="Environment_pg0l4"]
 background_mode = 2
-background_energy_multiplier = 0.4
+background_energy_multiplier = 0.5
 sky = SubResource("Sky_oa8tq")
-ambient_light_sky_contribution = 0.5
+ambient_light_energy = 1.2
 tonemap_mode = 2
+tonemap_exposure = 1.1
+tonemap_white = 0.7
 glow_enabled = true
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_y8eq8"]
@@ -631,6 +634,224 @@ theme_override_font_sizes/font_size = 100
 text = "Paused"
 horizontal_alignment = 1
 
+[node name="1PowerGem" type="Control" parent="."]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="1PowerGem"]
+modulate = Color(0.0588235, 0.529412, 1, 0.619608)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BarSquareGlossLarge" type="Sprite2D" parent="1PowerGem"]
+modulate = Color(1, 1, 1, 0.772549)
+position = Vector2(965.5, 386)
+scale = Vector2(13.4271, 13.5833)
+texture = ExtResource("17_iywhs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="1PowerGem"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -367.0
+offset_right = 200.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Continue" type="Button" parent="1PowerGem/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "Continue"
+
+[node name="Label" type="Label" parent="1PowerGem"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -310.0
+offset_right = 970.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/font_size = 50
+text = "
+with at least one power gem
+Press the left mouse button
+to fire your power pellets"
+horizontal_alignment = 1
+
+[node name="3PowerGem" type="Control" parent="."]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="3PowerGem"]
+modulate = Color(0.0588235, 0.529412, 1, 0.619608)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BarSquareGlossLarge" type="Sprite2D" parent="3PowerGem"]
+modulate = Color(1, 1, 1, 0.772549)
+position = Vector2(965.5, 386)
+scale = Vector2(13.4271, 13.5833)
+texture = ExtResource("17_iywhs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="3PowerGem"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -367.0
+offset_right = 200.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Continue" type="Button" parent="3PowerGem/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "Continue"
+
+[node name="Label" type="Label" parent="3PowerGem"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -310.0
+offset_right = 970.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/font_size = 50
+text = "
+with at least three power gems
+Press the \"E\" Key
+to heal by one health gem"
+horizontal_alignment = 1
+
+[node name="Vaccine" type="Control" parent="."]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Vaccine"]
+modulate = Color(0.0588235, 0.529412, 1, 0.619608)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BarSquareGlossLarge" type="Sprite2D" parent="Vaccine"]
+modulate = Color(1, 1, 1, 0.772549)
+position = Vector2(965.5, 386)
+scale = Vector2(13.4271, 13.5833)
+texture = ExtResource("17_iywhs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vaccine"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -367.0
+offset_right = 200.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Continue" type="Button" parent="Vaccine/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "Continue"
+
+[node name="Label" type="Label" parent="Vaccine"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -256.0
+offset_right = 970.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/font_size = 50
+text = "you've found the vaccine
+head back to rendevous
+for immediate extraction"
+horizontal_alignment = 1
+
 [node name="GameWin!" type="Control" parent="."]
 process_mode = 2
 visible = false
@@ -821,10 +1042,23 @@ stream = ExtResource("18_fpk1s")
 [connection signal="body_entered" from="Pickups/Vaccine" to="." method="_on_vaccine_body_entered"]
 [connection signal="body_entered" from="Pickups/Vaccine" to="Pickups/Vaccine" method="_on_body_entered"]
 [connection signal="finished" from="Pickups/Vaccine/AudioStreamPlayer3D" to="Pickups/Vaccine" method="_on_audio_stream_player_3d_finished"]
+[connection signal="body_entered" from="Pickups/PowerUp" to="." method="_on_power_up_body_entered"]
+[connection signal="body_entered" from="Pickups/PowerUp2" to="." method="_on_power_up_body_entered"]
+[connection signal="body_entered" from="Pickups/PowerUp3" to="." method="_on_power_up_body_entered"]
+[connection signal="body_entered" from="Pickups/PowerUp4" to="." method="_on_power_up_body_entered"]
+[connection signal="body_entered" from="Pickups/PowerUp5" to="." method="_on_power_up_body_entered"]
+[connection signal="body_entered" from="Pickups/PowerUp6" to="." method="_on_power_up_body_entered"]
+[connection signal="body_entered" from="Pickups/PowerUp7" to="." method="_on_power_up_body_entered"]
+[connection signal="body_entered" from="Pickups/PowerUp8" to="." method="_on_power_up_body_entered"]
+[connection signal="body_entered" from="Pickups/PowerUp9" to="." method="_on_power_up_body_entered"]
+[connection signal="body_entered" from="Pickups/PowerUp10" to="." method="_on_power_up_body_entered"]
 [connection signal="body_entered" from="Pickups/EXIT" to="." method="_on_exit_body_entered"]
 [connection signal="finished" from="Pickups/EXIT/AudioStreamPlayer3D" to="Pickups/EXIT" method="_on_audio_stream_player_3d_finished"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="1PowerGem/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="3PowerGem/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Vaccine/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="GameWin!/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="GameWin!/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="GameOver/VBoxContainer/Restart" to="." method="_on_restart_pressed"]

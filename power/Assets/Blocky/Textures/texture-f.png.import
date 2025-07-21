@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://2apcvagmx210"
 path.s3tc="res://.godot/imported/texture-f.png-3b97e46ee66281538956a0a7a95ab1f4.s3tc.ctex"
+path.etc2="res://.godot/imported/texture-f.png-3b97e46ee66281538956a0a7a95ab1f4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Blocky/Textures/texture-f.png"
-dest_files=["res://.godot/imported/texture-f.png-3b97e46ee66281538956a0a7a95ab1f4.s3tc.ctex"]
+dest_files=["res://.godot/imported/texture-f.png-3b97e46ee66281538956a0a7a95ab1f4.s3tc.ctex", "res://.godot/imported/texture-f.png-3b97e46ee66281538956a0a7a95ab1f4.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5y1wdu0gm5ir"
 path.s3tc="res://.godot/imported/gem_blue.svg-b872c16a3e9e90913205d451e7bb1ff3.s3tc.ctex"
+path.etc2="res://.godot/imported/gem_blue.svg-b872c16a3e9e90913205d451e7bb1ff3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Sprites/gem_blue.svg"
-dest_files=["res://.godot/imported/gem_blue.svg-b872c16a3e9e90913205d451e7bb1ff3.s3tc.ctex"]
+dest_files=["res://.godot/imported/gem_blue.svg-b872c16a3e9e90913205d451e7bb1ff3.s3tc.ctex", "res://.godot/imported/gem_blue.svg-b872c16a3e9e90913205d451e7bb1ff3.etc2.ctex"]
 
 [params]
 

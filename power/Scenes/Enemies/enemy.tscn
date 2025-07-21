@@ -1938,20 +1938,20 @@ script = ExtResource("1_jcvw6")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="root" type="Node3D" parent="character-l2/character-l"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0154135, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02688, 0)
 
 [node name="leg-left" type="MeshInstance3D" parent="character-l2/character-l/root"]
-transform = Transform3D(1, 0, 0, 0, 0.980383, -0.197107, 0, 0.197107, 0.980383, 0.2, 1, 2.03489e-14)
+transform = Transform3D(1, 0, 0, 0, 0.956016, 0.293315, 0, -0.293315, 0.956016, 0.2, 1, 2.03489e-14)
 mesh = SubResource("ArrayMesh_q6cqg")
 skeleton = NodePath("")
 
 [node name="leg-right" type="MeshInstance3D" parent="character-l2/character-l/root"]
-transform = Transform3D(1, 0, 0, 0, 0.980383, 0.197107, 0, -0.197107, 0.980383, -0.2, 1, 2.18378e-14)
+transform = Transform3D(1, 0, 0, 0, 0.956016, -0.293315, 0, 0.293315, 0.956016, -0.2, 1, 2.18378e-14)
 mesh = SubResource("ArrayMesh_ojxjm")
 skeleton = NodePath("")
 
 [node name="torso" type="MeshInstance3D" parent="character-l2/character-l/root"]
-transform = Transform3D(1, 0, 0, 0, 0.999245, -0.0388926, 0, 0.0388926, 0.999245, 0, 0.7, 0)
+transform = Transform3D(1, 0, 0, 0, 0.998294, 0.0584039, 0, -0.0584039, 0.998294, 0, 0.7, 0)
 mesh = SubResource("ArrayMesh_1rq0v")
 skeleton = NodePath("")
 
@@ -1966,7 +1966,7 @@ mesh = SubResource("ArrayMesh_irmme")
 skeleton = NodePath("")
 
 [node name="head" type="MeshInstance3D" parent="character-l2/character-l/root/torso"]
-transform = Transform3D(0.0996926, 0, -0.00783367, 0, 0.1, 0, 0.00783367, 0, 0.0996926, 0, 1.2, 0)
+transform = Transform3D(0.0994145, 0, 0.0108045, 0, 0.1, 0, -0.0108045, 0, 0.0994145, 0, 1.2, 0)
 mesh = SubResource("ArrayMesh_s6io3")
 skeleton = NodePath("")
 
@@ -2029,7 +2029,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="Target" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -30)
 
 [connection signal="animation_finished" from="character-l2/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="character-l2/AttackDetect" to="." method="_on_attack_body_entered"]

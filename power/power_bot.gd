@@ -20,8 +20,8 @@ var mouseRotation : Vector3
 var mouseSensitivity : float = .5
 var cameraUpLimit = deg_to_rad(-45)
 var cameraDownLimit = deg_to_rad(45)
-var CamPos = -1.5
-var leftSide : bool = true
+var CamPos = Vector3(-1.5, 3.5, 0)
+var camPosition = 1
 
 #movementVariables
 var input_dir
@@ -154,14 +154,24 @@ func cameraControl(delta):
 	yInput = 0
 	hInput = 0
 	if Input.is_action_just_pressed("cameraSwap"):
-		if leftSide == true:
-			CamPos = 1.5
-			leftSide = false
-		else:
-			CamPos = -1.5
-			leftSide = true
-	if $CameraController.position.x != CamPos:
-		$CameraController.position.x = move_toward($CameraController.position.x, CamPos, delta * 5)
+		match camPosition:
+			1:
+				CamPos = Vector3(1.5, 3.5, 0)
+				$CameraController.spring_length = 5
+				camPosition = 2
+			2:
+				CamPos = Vector3(0, 2.3, -.3)
+				$CameraController.spring_length = 0
+				camPosition = 3
+			3:
+				CamPos = Vector3(-1.5, 3.5, 0)
+				$CameraController.spring_length = 5
+				camPosition = 1
+
+	if $CameraController.position != CamPos:
+		$CameraController.position.x = move_toward($CameraController.position.x, CamPos.x, delta * 5)
+		$CameraController.position.y = move_toward($CameraController.position.y, CamPos.y, delta * 5)
+		$CameraController.position.z = move_toward($CameraController.position.z, CamPos.z, delta * 5)
 
 func _on_recharge_timeout() -> void:
 	if dead == false:

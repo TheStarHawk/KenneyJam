@@ -55,45 +55,12 @@ data = {
 [node name="Player" type="Node3D" parent="."]
 
 [node name="PowerBot" parent="Player" instance=ExtResource("2_qc4db")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68905, 13.2016, 0.257285)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.56837, 13.2016, 0.257285)
 
 [node name="Enemies" type="Node3D" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource("3_qc4db")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.88553, 7.67053, -6.29186)
-
-[node name="Enemy2" parent="Enemies" instance=ExtResource("3_qc4db")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.76844, 7.67053, -6.29186)
-
-[node name="Enemy3" parent="Enemies" instance=ExtResource("3_qc4db")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.14185, 7.67053, -6.29186)
-
-[node name="Enemy4" parent="Enemies" instance=ExtResource("3_qc4db")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23662, 7.67053, -6.29186)
-
-[node name="Enemy5" parent="Enemies" instance=ExtResource("3_qc4db")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6131, 7.67053, -6.29186)
-
-[node name="Enemy6" parent="Enemies" instance=ExtResource("3_qc4db")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.71966, 7.67053, -6.29186)
-
-[node name="Enemy7" parent="Enemies" instance=ExtResource("3_qc4db")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.83281, 7.67053, -6.29186)
-
-[node name="Enemy8" parent="Enemies" instance=ExtResource("3_qc4db")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6097, 7.67053, -6.29186)
-
-[node name="Enemy9" parent="Enemies" instance=ExtResource("3_qc4db")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2264, 7.67053, -6.29186)
-
-[node name="Enemy10" parent="Enemies" instance=ExtResource("3_qc4db")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1069, 7.67053, -6.29186)
-
-[node name="Enemy11" parent="Enemies" instance=ExtResource("3_qc4db")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.1057, 7.67053, -6.29186)
-
-[node name="Enemy12" parent="Enemies" instance=ExtResource("3_qc4db")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8474, 7.67053, -6.29186)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5855, 7.67053, 0.362517)
 
 [node name="Pickups" type="Node3D" parent="."]
 
