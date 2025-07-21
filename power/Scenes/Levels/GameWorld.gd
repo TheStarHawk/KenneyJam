@@ -5,7 +5,7 @@ var powerPointsCollected : int
 var totalZombies : int
 var zombiesDefeated : int
 
-func showStats():
+func _ready():
 	totalZombies = $Enemies/Group1.get_child_count() + $Enemies/Group2.get_child_count()
 
 func _input(event: InputEvent) -> void:
@@ -42,7 +42,7 @@ func game_win():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$"GameWin!".visible = true
 	$"GameWin!/Stats/PowerGems".text = str("Powergems: ", $Player/PowerBot.powerPointMax, "/10")
-	$"GameWin!/Stats/Zombies".text = str("Zombies: ", $Enemies/Group1.get_child_count() + $Enemies/Group2.get_child_count(), "/", totalZombies)
+	$"GameWin!/Stats/Zombies".text = str("Zombies: ", totalZombies - $Enemies/Group1.get_child_count() + $Enemies/Group2.get_child_count(), "/", totalZombies)
 	get_tree().paused = true
 
 func _on_exit_body_entered(body):
@@ -52,3 +52,4 @@ func _on_exit_body_entered(body):
 func gameOver():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$GameOver.visible = true
+	get_tree().paused = true

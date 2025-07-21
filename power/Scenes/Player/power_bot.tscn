@@ -1,6 +1,6 @@
 [gd_scene load_steps=71 format=4 uid="uid://dtptrumiafx5a"]
 
-[ext_resource type="Script" uid="uid://b5ohj7w723l6v" path="res://power_bot.gd" id="1_lrhgu"]
+[ext_resource type="Script" uid="uid://0chwp823oqrn" path="res://power_bot.gd" id="1_lrhgu"]
 [ext_resource type="Script" uid="uid://dl3xbwo8hqy21" path="res://Scenes/Player/PowerBotAnim.gd" id="2_37qln"]
 [ext_resource type="Texture2D" uid="uid://r7qs3jkl8aqs" path="res://Assets/Blocky/Textures/texture-g.png" id="2_kjibt"]
 [ext_resource type="AudioStream" uid="uid://cpmcxhixfwxs0" path="res://Assets/Sounds/laserSmall_004.ogg" id="4_37qln"]
@@ -62,7 +62,7 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_7ajv1")
 blend_point_1/pos = 1.0
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_jt8hd"]
-graph_offset = Vector2(-152.465, 167.741)
+graph_offset = Vector2(-310.392, 427.907)
 nodes/Aiming/node = SubResource("AnimationNodeBlend2_nxhd0")
 nodes/Aiming/position = Vector2(400, 360)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_mfi6h")
@@ -86,7 +86,6 @@ node_connections = [&"Aiming", 0, &"Movement", &"Aiming", 1, &"Fire", &"Die", 0,
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ruj35"]
 resource_name = "texture-g"
-shading_mode = 0
 albedo_texture = ExtResource("2_kjibt")
 texture_filter = 1
 
@@ -1946,7 +1945,7 @@ shape = SubResource("CapsuleShape3D_37qln")
 root_node = NodePath("../character-g2")
 tree_root = SubResource("AnimationNodeBlendTree_jt8hd")
 anim_player = NodePath("../character-g2/AnimationPlayer")
-parameters/Aiming/blend_amount = 1.0
+parameters/Aiming/blend_amount = 0.0
 parameters/Die/blend_amount = 0.0
 parameters/Fire/active = false
 parameters/Fire/internal_active = false
@@ -1988,7 +1987,7 @@ mesh = SubResource("ArrayMesh_yy2wt")
 skeleton = NodePath("")
 
 [node name="arm-right" type="MeshInstance3D" parent="character-g2/character-g/root/torso"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.4, 1.04617, -0.0999999)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.04617, -0.0999999)
 mesh = SubResource("ArrayMesh_8v5ro")
 skeleton = NodePath("")
 

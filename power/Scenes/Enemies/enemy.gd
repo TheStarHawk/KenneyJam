@@ -34,6 +34,7 @@ func _physics_process(delta: float) -> void:
 			$"character-l2".look_at(Vector3(target.global_position.x, global_position.y, target.global_position.z))
 		else:
 			direction = randDirection
+			$Target.position = randDirection
 			$"character-l2".look_at($Target.global_position)
 		if direction != Vector3.ZERO:
 			$AnimationTree.set("parameters/ArmsUp/blend_amount", move_toward($AnimationTree.get("parameters/ArmsUp/blend_amount"), 1, delta))
@@ -103,4 +104,3 @@ func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
 
 func _on_change_dir_timeout() -> void:
 	randDirection = Vector3(randf_range(-1, 1), 0, randf_range(-1, 1))
-	$Target.position = randDirection

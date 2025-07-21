@@ -5,7 +5,6 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_afkwa"]
 resource_name = "texture-l"
-shading_mode = 0
 albedo_texture = ExtResource("1_613su")
 texture_filter = 1
 
@@ -1939,20 +1938,20 @@ script = ExtResource("1_jcvw6")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="root" type="Node3D" parent="character-l2/character-l"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0102352, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0154135, 0)
 
 [node name="leg-left" type="MeshInstance3D" parent="character-l2/character-l/root"]
-transform = Transform3D(1, 0, 0, 0, 0.994262, 0.106978, 0, -0.106978, 0.994262, 0.2, 1, 2.03489e-14)
+transform = Transform3D(1, 0, 0, 0, 0.980383, -0.197107, 0, 0.197107, 0.980383, 0.2, 1, 2.03489e-14)
 mesh = SubResource("ArrayMesh_q6cqg")
 skeleton = NodePath("")
 
 [node name="leg-right" type="MeshInstance3D" parent="character-l2/character-l/root"]
-transform = Transform3D(1, 0, 0, 0, 0.994262, -0.106978, 0, 0.106978, 0.994262, -0.2, 1, 2.18378e-14)
+transform = Transform3D(1, 0, 0, 0, 0.980383, 0.197107, 0, -0.197107, 0.980383, -0.2, 1, 2.18378e-14)
 mesh = SubResource("ArrayMesh_ojxjm")
 skeleton = NodePath("")
 
 [node name="torso" type="MeshInstance3D" parent="character-l2/character-l/root"]
-transform = Transform3D(1, 0, 0, 0, 0.999771, 0.0214609, 0, -0.0214609, 0.999771, 0, 0.7, 0)
+transform = Transform3D(1, 0, 0, 0, 0.999245, -0.0388926, 0, 0.0388926, 0.999245, 0, 0.7, 0)
 mesh = SubResource("ArrayMesh_1rq0v")
 skeleton = NodePath("")
 
@@ -1967,7 +1966,7 @@ mesh = SubResource("ArrayMesh_irmme")
 skeleton = NodePath("")
 
 [node name="head" type="MeshInstance3D" parent="character-l2/character-l/root/torso"]
-transform = Transform3D(0.0998697, 0, 0.00510237, 0, 0.1, 0, -0.00510237, 0, 0.0998697, 0, 1.2, 0)
+transform = Transform3D(0.0996926, 0, -0.00783367, 0, 0.1, 0, 0.00783367, 0, 0.0996926, 0, 1.2, 0)
 mesh = SubResource("ArrayMesh_s6io3")
 skeleton = NodePath("")
 
